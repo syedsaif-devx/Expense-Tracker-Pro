@@ -93,8 +93,7 @@ You can easily extend the app by:
 
 ## 📄 License
 
-This project is open-source and free to use for personal or educational purposes.
-
+This project is under MIT License
 ---
 
 ## 👤 Author
