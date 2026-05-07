@@ -662,7 +662,6 @@
         <h1> Expense Tracker Pro</h1>
         <p>Take control of your finances with smart multi-currency tracking</p>
     </header>
-    <div id="authNav" style="text-align:right;margin-bottom:10px;font-weight:600;color:var(--muted);"></div>
 
     <!-- Currency Selector -->
     <div class="currency-box">
@@ -861,27 +860,6 @@
 </div>
 
 <script>
-
-<script>
-    // Auth nav: show sign in link or welcome + logout
-    function updateAuthNav() {
-        const el = document.getElementById('authNav');
-        if (!el) return;
-        const session = localStorage.getItem('etpSession') || sessionStorage.getItem('etpSession');
-        if (session) {
-            const s = JSON.parse(session);
-            const name = s.name || s.first || s.email || '';
-            el.innerHTML = `Welcome, ${name} · <a href="#" id="logoutLink" style="color:var(--accent);text-decoration:none;margin-left:8px;font-weight:700">Logout</a>`;
-            const logout = document.getElementById('logoutLink');
-            logout.onclick = (e) => { e.preventDefault(); localStorage.removeItem('etpSession'); sessionStorage.removeItem('etpSession'); window.location.href = 'auth.html'; };
-        } else {
-            el.innerHTML = `<a href="auth.html" style="color:var(--accent);font-weight:700;text-decoration:none">Sign In / Sign Up</a>`;
-        }
-    }
-
-    updateAuthNav();
-    window.addEventListener('storage', updateAuthNav);
-</script>
     let transactions = [];
     let selectedType = "expense";
     let currentFilter = "all";
